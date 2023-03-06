@@ -1,3 +1,4 @@
+from requests.auth import HTTPProxyAuth
 from pymongo import MongoClient
 from datetime import datetime
 import urllib.request
@@ -26,8 +27,9 @@ if Conectado():
     Resultados = Blaze.Resultados
 
 def Resultado():
-    proxies = {'HTTPS': '143.0.176.136:8088'}
-    blazeAPI = json.loads(requests.get('https://blaze.com/api/roulette_games/recent', proxies=proxies).text)
+    Proxy = {'HTTPS': '84.32.32.190:49155'}
+    Auth = HTTPProxyAuth('douglasfbfarias', 'LS37hcRjSA')
+    blazeAPI = json.loads(requests.get('https://blaze.com/api/roulette_games/recent', proxies=Proxy, auth=Auth).text)
     print(blazeAPI)
 
 Resultado()
