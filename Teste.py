@@ -28,7 +28,7 @@ if Conectado():
 
 def Resultado():
     Proxy = {'HTTPS': '84.32.32.190:49155'}
-    Auth = HTTPProxyAuth('douglasfbfarias', 'LS37hcRjSA')
+    Auth = ('douglasfbfarias', 'LS37hcRjSA')
     blazeAPI = json.loads(requests.get('https://blaze.com/api/roulette_games/recent', proxies=Proxy, auth=Auth).text)
     print(blazeAPI)
 
