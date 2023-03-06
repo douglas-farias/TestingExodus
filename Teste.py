@@ -26,10 +26,7 @@ if Conectado():
     Resultados = Blaze.Resultados
 
 def Resultado():
-    proxies = {
-        'HTTP': '170.244.27.150:8888',
-        'HTTPS': '201.17.26.54:80',
-        }
+    proxies = {'HTTPS': '143.0.176.136:8088'}
     blazeAPI = json.loads(requests.get('https://blaze.com/api/roulette_games/recent', proxies=proxies).text)
     print(blazeAPI)
 
